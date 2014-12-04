@@ -87,7 +87,6 @@
 		D52E472C1A2EAE5B00D26A51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D52E47631A2EB26A00D26A51 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D52E47741A2EB46500D26A51 /* WatchDataMovement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WatchDataMovement.entitlements; sourceTree = "<group>"; };
-		D52E47751A2EB4CB00D26A51 /* ToTheWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = ToTheWatch.entitlements; path = ../ToTheWatch/ToTheWatch.entitlements; sourceTree = "<group>"; };
 		D52E47761A2EB63300D26A51 /* WatchDataMovement WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WatchDataMovement WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				D52E47761A2EB63300D26A51 /* WatchDataMovement WatchKit Extension.entitlements */,
-				D52E47751A2EB4CB00D26A51 /* ToTheWatch.entitlements */,
 				D52E471C1A2EAE5B00D26A51 /* InterfaceController.h */,
 				D52E471D1A2EAE5B00D26A51 /* InterfaceController.m */,
 				D52E471F1A2EAE5B00D26A51 /* Images.xcassets */,
@@ -686,6 +684,7 @@
 				D52E470D1A2EAE4A00D26A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D52E470E1A2EAE4A00D26A51 /* Build configuration list for PBXNativeTarget "WatchDataMovementTests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +693,7 @@
 				D52E47101A2EAE4A00D26A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D52E47311A2EAE5B00D26A51 /* Build configuration list for PBXNativeTarget "WatchDataMovement Watch App" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +702,7 @@
 				D52E47331A2EAE5B00D26A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D52E47341A2EAE5B00D26A51 /* Build configuration list for PBXNativeTarget "WatchDataMovement WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +711,7 @@
 				D52E47361A2EAE5B00D26A51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,6 +5,7 @@
 //  Created by New on 12/2/14.
 //  Copyright (c) 2014 Braen. All rights reserved.
 //
+// nothing here pretaining to communication to watch
 
 #import "AppDelegate.h"
 
