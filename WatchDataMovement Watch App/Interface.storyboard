@@ -16,11 +16,6 @@
                                 <action selector="update" destination="AgC-eL-Hgc" id="neP-kC-QEk"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="center" verticalAlignment="bottom" title="Change" id="sBm-h4-9PU">
-                            <connections>
-                                <action selector="changeMessage" destination="AgC-eL-Hgc" id="IC2-Et-dRN"/>
-                            </connections>
-                        </button>
                     </items>
                     <connections>
                         <outlet property="label" destination="W2r-47-fPl" id="IwZ-Qy-zCo"/>

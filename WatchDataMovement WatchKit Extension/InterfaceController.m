@@ -31,33 +31,35 @@
     return self;
 }
 
-- (NSString *)sharedMessage {
-    NSString *message = [self.sharedDefaults objectForKey:@"message"];
-    
-    return message;
-}
-
-- (void)setMessage:(NSString *)newMessage {
-    [self.sharedDefaults setObject:newMessage forKey:@"message"];
-}
-
+// These methods are all we really need for getting the message on the watch
+// update to write the msg to the label
 - (IBAction)update {
     // Read NSUserDefaults to get the message
     NSString *msg = self.sharedMessage;
     NSLog(@"Message is %@", msg);
     self.label.text = msg;
 }
+// getting the NSUserDefault from the App Group with the name message
+- (NSString *)sharedMessage {
+    NSString *message = [self.sharedDefaults objectForKey:@"message"];
+    
+    return message;
+}
 
+// These methods are only needed when change the message
+// aka, doing something on the watch to modify the text
+// this seems contrary to what the apple watch is meant to do
+// if it ever needs to be done though, here is the code
 - (IBAction)changeMessage {
     NSString *msg = self.sharedMessage;
     NSString *newMsg = [msg stringByAppendingString:@"+"];
     self.message = newMsg;
     [self update];
 }
-
-
-- (void)defaultsChanged:(NSNotification *)info
-{
+- (void)setMessage:(NSString *)newMessage {
+    [self.sharedDefaults setObject:newMessage forKey:@"message"];
+}
+- (void)defaultsChanged:(NSNotification *)info {
     NSLog(@"Defaults changed");
     [self update];
 }
