@@ -12,9 +12,11 @@
 @interface InterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *label;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *turnsLeft;
 
 @property (nonatomic) NSUserDefaults *sharedDefaults;
 @property (nonatomic) NSString *message;
+@property (nonatomic) NSString *turn;
 
 @end
 
@@ -27,6 +29,8 @@
         // Configure interface objects here.
         NSLog(@"%@ initWithContext", self);
         
+        self.label.text = @"???";
+        self.turnsLeft.text = @"21";
     }
     return self;
 }
@@ -36,8 +40,19 @@
 - (IBAction)update {
     // Read NSUserDefaults to get the message
     NSString *msg = self.sharedMessage;
-    NSLog(@"Message is %@", msg);
-    self.label.text = msg;
+    if ([msg  isEqual: @""])
+    {
+        self.label.text = @"???";
+    }
+    else
+    {
+        NSLog(@"Message is %@", msg);
+        self.label.text = msg;
+    }
+    
+    NSString *turns = self.sharedTurn;
+    NSLog(@"Turns left %@", turns);
+    self.turnsLeft.text = turns;
 }
 // getting the NSUserDefault from the App Group with the name message
 - (NSString *)sharedMessage {
@@ -45,6 +60,17 @@
     
     return message;
 }
+-(NSString *)sharedTurn{
+    NSString *turn = [self.sharedDefaults objectForKey:@"turns"];
+    
+    return turn;
+}
+
+- (IBAction)clearLabels {
+    self.label.text = @"???";
+    self.turnsLeft.text = @"21";
+}
+
 
 // These methods are only needed when change the message
 // aka, doing something on the watch to modify the text

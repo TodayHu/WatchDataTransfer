@@ -10,15 +10,26 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <label width="1" alignment="center" text="Label" textAlignment="center" id="W2r-47-fPl"/>
-                        <button width="1" alignment="center" verticalAlignment="center" title="Update" id="IHx-Lb-7qT">
+                        <label width="1" alignment="center" text="Label" textAlignment="center" id="W2r-47-fPl" userLabel="word"/>
+                        <label alignment="center" text="Label" id="Yjg-hi-M4d" userLabel="turns left"/>
+                        <button width="0.80000000000000004" height="0.50000000000000011" alignment="center" verticalAlignment="center" title="Update" id="IHx-Lb-7qT">
                             <connections>
                                 <action selector="update" destination="AgC-eL-Hgc" id="neP-kC-QEk"/>
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="cii-cU-IO6">
+                        <items>
+                            <menuItem title="Clear" icon="trash" id="198-d0-B3k">
+                                <connections>
+                                    <action selector="clearLabels" destination="AgC-eL-Hgc" id="ycs-mA-RUP"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="label" destination="W2r-47-fPl" id="IwZ-Qy-zCo"/>
+                        <outlet property="turnsLeft" destination="Yjg-hi-M4d" id="Pce-al-tza"/>
                     </connections>
                 </controller>
             </objects>

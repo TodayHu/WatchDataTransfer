@@ -18,6 +18,8 @@
 
 // connection to iphone text, where the string originates to be transferred
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *guessLeft;
+@property (nonatomic) int turns;
 
 @end
 
@@ -40,8 +42,16 @@
 // METHOD 1 for data transmission
 - (IBAction)loadMessage:(id)sender
 {
+    _turns = 21;
+    NSString * turnToString = [[NSString alloc] initWithFormat:@"%i", _turns];
+    self.guessLeft.text = turnToString;
     [self setNewMessage];
     
+    // TODO put in own method
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.add.something.whatever"];
+    [sharedDefaults setObject:turnToString forKey:@"turns"];
+    
+    [sharedDefaults synchronize];
     // seems to be duplicate code, only needs to be in the setNewMessage method
     // or we could do away with that method althogether...
     //
@@ -63,6 +73,18 @@
     [sharedDefaults synchronize];
 }
 
+- (IBAction)countDownTurn:(id)sender {
+    NSLog(@"Touched button");
+    --_turns;
+    NSString * turnToString = [[NSString alloc] initWithFormat:@"%i", _turns];
+    self.guessLeft.text = turnToString;
+    
+    // TODO put in own method
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.add.something.whatever"];
+    [sharedDefaults setObject:turnToString forKey:@"turns"];
+    
+    [sharedDefaults synchronize];
+}
 
 /*
 // METHOD 2 for data transmission

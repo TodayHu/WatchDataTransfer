@@ -32,11 +32,37 @@
                                     <action selector="loadMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fqR-II-RMl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="300" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXZ-SA-MZM">
+                                <rect key="frame" x="176" y="317" width="248" height="175"/>
+                                <color key="backgroundColor" red="1" green="0.80956299580000002" blue="0.67348388889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="IP4-XD-sYB"/>
+                                    <constraint firstAttribute="width" constant="248" id="jnc-CM-2MF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnR-Qx-JEk">
+                                <rect key="frame" x="255" y="350" width="91" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="H5F-X3-ERV"/>
+                                    <constraint firstAttribute="width" constant="91" id="aLy-S7-Hht"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countDownTurn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Lf-oC-IHT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UDp-F3-PkF" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="CiB-zA-izg"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="YnP-Iy-38w" secondAttribute="bottom" constant="512" id="Elg-IX-Lcw"/>
+                            <constraint firstAttribute="centerX" secondItem="zXZ-SA-MZM" secondAttribute="centerX" id="KB6-DQ-z4O"/>
+                            <constraint firstAttribute="centerX" secondItem="DnR-Qx-JEk" secondAttribute="centerX" id="MPK-Cq-QUh"/>
                             <constraint firstItem="YnP-Iy-38w" firstAttribute="top" secondItem="UDp-F3-PkF" secondAttribute="bottom" constant="8" id="OIz-mP-Y33"/>
                             <constraint firstItem="YnP-Iy-38w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="YU9-St-3vf"/>
                             <constraint firstItem="UDp-F3-PkF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="qOq-Od-b3p"/>
@@ -44,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="guessLeft" destination="zXZ-SA-MZM" id="RSe-96-BbR"/>
                         <outlet property="textField" destination="UDp-F3-PkF" id="vSO-4Q-Ge9"/>
                     </connections>
                 </viewController>
