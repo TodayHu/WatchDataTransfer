@@ -23,16 +23,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnP-Iy-38w">
-                                <rect key="frame" x="16" y="58" width="46" height="30"/>
+                                <rect key="frame" x="16" y="58" width="61" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.56973412280000002" blue="0.17933933390000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Load">
+                                <state key="normal" title="Reveal">
                                     <color key="titleShadowColor" red="1" green="0.56973412280000002" blue="0.17933933390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loadMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fqR-II-RMl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="300" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXZ-SA-MZM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="21" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXZ-SA-MZM">
                                 <rect key="frame" x="176" y="317" width="248" height="175"/>
                                 <color key="backgroundColor" red="1" green="0.80956299580000002" blue="0.67348388889999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

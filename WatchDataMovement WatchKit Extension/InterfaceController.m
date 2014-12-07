@@ -39,7 +39,7 @@
 // update to write the msg to the label
 - (IBAction)update {
     // Read NSUserDefaults to get the message
-    NSString *msg = self.sharedMessage;
+    NSString *msg = [self sharedMessage];
     if ([msg  isEqual: @""])
     {
         self.label.text = @"???";
@@ -67,10 +67,18 @@
 }
 
 - (IBAction)clearLabels {
-    self.label.text = @"???";
     self.turnsLeft.text = @"21";
+    
+    NSString * clearMessage = [self sharedMessage];
+    clearMessage = @"???";
+    [self.sharedDefaults setObject:clearMessage forKey:@"message"];
+    self.label.text = clearMessage;
+    
+    NSString * theGuess = [self.sharedDefaults objectForKey:@"message"];
+    NSLog(@"%@", theGuess);
+    
+    [self.sharedDefaults synchronize];
 }
-
 
 // These methods are only needed when change the message
 // aka, doing something on the watch to modify the text

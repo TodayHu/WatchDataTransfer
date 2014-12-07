@@ -20,12 +20,17 @@
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UILabel *guessLeft;
 @property (nonatomic) int turns;
+@property (nonatomic, strong) NSUserDefaults * sharedDefaults;
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+    _sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.add.something.whatever"];
+    NSString * theGuess = [_sharedDefaults objectForKey:@"message"];
+    NSLog(@"%@", theGuess);
+    
     [super viewDidLoad];
 }
 
@@ -62,28 +67,28 @@
 }
 
 - (void)setNewMessage
-{
-    NSLog(@"Setting message to %@", self.textField.text);
-    
+{    
     // the magic behind it all, NSUserDefault handled within an App Group withSuiteName:@"..."
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.add.something.whatever"];
-    [sharedDefaults setObject:self.textField.text forKey:@"message"];
+    [_sharedDefaults setObject:self.textField.text forKey:@"message"];
+    
+    NSString * theGuess = [_sharedDefaults objectForKey:@"message"];
+    NSLog(@"%@", theGuess);
     
     // dont forget to synchronize the the NSUserDefault!
-    [sharedDefaults synchronize];
+    [_sharedDefaults synchronize];
 }
 
-- (IBAction)countDownTurn:(id)sender {
-    NSLog(@"Touched button");
+- (IBAction)countDownTurn:(id)sender
+{
     --_turns;
     NSString * turnToString = [[NSString alloc] initWithFormat:@"%i", _turns];
     self.guessLeft.text = turnToString;
     
     // TODO put in own method
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.add.something.whatever"];
-    [sharedDefaults setObject:turnToString forKey:@"turns"];
+    [_sharedDefaults setObject:turnToString forKey:@"turns"];
+    [_sharedDefaults setObject:@"???" forKey:@"message"];
     
-    [sharedDefaults synchronize];
+    [_sharedDefaults synchronize];
 }
 
 /*
